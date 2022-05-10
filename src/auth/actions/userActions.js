@@ -13,7 +13,12 @@ if (status === true) {
 }
 }
 export const signupUser = (credentials, navigate, setFieldError, setSubmitting) => {
-
+const status = true;
+if(status === true){
+    //allow access
+}else {
+    //return error to the user
+}
 }
 
 export const logoutUser = () => {

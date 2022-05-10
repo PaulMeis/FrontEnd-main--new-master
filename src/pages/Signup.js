@@ -27,6 +27,9 @@ import * as Yup from 'yup';
 import { FiMail, FiLock, FiUser, FiCalendar } from 'react-icons/fi';
 
 
+
+
+    
 const Signup = ({signupUser}) => {
     const navigate = useNavigate();
     return (
@@ -66,8 +69,11 @@ const Signup = ({signupUser}) => {
                     }
 
                     onSubmit={(values, { setSubmitting, setFieldError }) => {
+                        console.log(values);
                       signupUser(values, navigate, setFieldError, setSubmitting)
                     }}
+
+                   
                 >
 
                     {() => (
@@ -139,11 +145,13 @@ const Signup = ({signupUser}) => {
 
 
 
-                            <ButtonGroup>
-                                {<StyledFormButton
-                                    type="submit">Contact Information</StyledFormButton>}
+                            
 
+                            <ButtonGroup>
+                               {<StyledFormButton
+                                type="submit">Dashboard</StyledFormButton>}
                             </ButtonGroup>
+
                         </Form>
                     )}
                 </Formik>

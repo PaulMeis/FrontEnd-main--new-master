@@ -17,8 +17,11 @@ import Logo from "./../assets/Merkel.png";
 //react
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
 
-const Dashboard = () => {
+
+const Dashboard = ({user}) => {
+    const navigate = useNavigate();
     return (
         <div>
             <div
@@ -41,7 +44,7 @@ const Dashboard = () => {
           
             <Avatar image={Logo}/>
             
-                <StyledTitle size={65}>Welcome, Angela Merkel!</StyledTitle>
+                <StyledTitle size={65}>Welcome, {user.name}!</StyledTitle>
                
 
 
@@ -62,5 +65,10 @@ const Dashboard = () => {
         </div>
     );
 }
+
+const mapStateToProps = ({session}) => ({
+
+    user: session.user
+})
 
 export default Dashboard;
